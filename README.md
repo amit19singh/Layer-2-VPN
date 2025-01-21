@@ -4,6 +4,7 @@
 This project implements a Layer 2 VPN using:
 
 VSwitch: A software-based virtual switch with a MAC table and frame forwarding.
+
 VPort: A virtual port interfacing with a TAP device, forwarding frames to/from the VSwitch.
 
 # How It Works
