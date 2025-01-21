@@ -10,7 +10,7 @@ VSwitch: A software-based virtual switch with a MAC table and frame forwarding.
 VPort: A virtual port interfacing with a TAP device, forwarding frames to/from the VSwitch.
 
 # Prerequisite Knowledge
-Virtual Switch:
+### Virtual Switch
 
 A virtual network switch is a software-based switch that connects virtual machines (VMs) within a virtualized environment, enabling communication between VMs, virtual networks, and physical networks.
 
@@ -18,7 +18,7 @@ Operating as a multiport network bridge, it uses virtual MAC addresses to forwar
 
 The switch maintains a forwarding table to map virtual MAC addresses to virtual ports. When a data frame is received, it forwards the frame to the correct port. If the destination is unknown, it broadcasts the frame to all ports except the source.
 
-Virtual Network Device (TAP Device):
+### Virtual Network Device (TAP Device)
 
 A TAP device is a virtual network interface that simulates a physical network card, allowing operating systems and applications to use it like a real interface. It is commonly used in Virtual Private Network (VPN) setups to enable secure data transmission over public networks.
 
