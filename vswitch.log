@@ -1,0 +1,23 @@
+2025-01-20 15:45:28,798 - [VSwitch] Started at 0.0.0.0:8000
+2025-01-20 15:45:32,481 - Shutting down VSwitch...
+Traceback (most recent call last):
+  File "/home/amit/Dropbox/Programming/L2 VPN/vswitch.py", line 115, in <module>
+    asyncio.run(main(args.port, args.mac_table_size, args.batch_size))
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 686, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/amit/Dropbox/Programming/L2 VPN/vswitch.py", line 103, in main
+    await process_batch(loop, server_socket, mac_table, batch_size)
+  File "/home/amit/Dropbox/Programming/L2 VPN/vswitch.py", line 51, in process_batch
+    data, vport_addr = await loop.sock_recvfrom(server_socket, 1518)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/selector_events.py", line 475, in sock_recvfrom
+    return await fut
+           ^^^^^^^^^
+asyncio.exceptions.CancelledError
