@@ -44,15 +44,15 @@ VPort:
 
 
 # Prerequisites
-Python 3.8+
-C++17
-Linux with /dev/net/tun enabled
-GCC/Clang for C++ compilation
+- Python 3.8+
+- C++17
+- Linux with /dev/net/tun enabled
+- GCC/Clang for C++ compilation
 
 # Setup
 - Clone the project
-- compile the code
-  g++ -o vport vport.cpp tap_utils.cpp -lpthread
+- Compile the code
+  - g++ -o vport vport.cpp tap_utils.cpp -lpthread
 
 
 Note: Since, we are running everything locally on a single host, in the same network namespace, with both TAP devices as local interfaces, this usually prevents the kernel from sending ARP requests as it would in an actual LAN setup.
