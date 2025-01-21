@@ -37,7 +37,7 @@ GCC/Clang for C++ compilation
   g++ -o vport vport.cpp tap_utils.cpp -lpthread
 
 
-# Note:
+## Note:
 Since, we are running everything locally on a single host, in the same network namespace, with both TAP devices as local interfaces, this usually prevents the kernel from sending ARP requests as it would in an actual LAN setup.
 
 So to mimic an actual environment, we will create separate namespaces for each TAP device.
