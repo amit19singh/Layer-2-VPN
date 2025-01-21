@@ -69,7 +69,8 @@ So to mimic an actual environment, we will create separate namespaces for each T
 - sudo ip netns exec ns0 ping -I tapyuan0 10.0.0.3
 - sudo ip netns exec ns1 ping -I tapyuan1 10.0.0.2
 
+![Screenshot From 2025-01-20 15-10-04](https://github.com/user-attachments/assets/1c36f186-7636-434d-ad7c-fc036113f6bf)
 
 
 
-# Note: This project is only compactible with Linux.
+## Note: This project is only compactible with Linux.
