@@ -51,8 +51,6 @@ GCC/Clang for C++ compilation
 
 # Setup
 - Clone the project
-  git clone https://github.com/YourUsername/L2-VPN.git
-  cd L2-VPN
 - compile the code
   g++ -o vport vport.cpp tap_utils.cpp -lpthread
 
