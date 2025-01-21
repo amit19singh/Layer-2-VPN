@@ -1,11 +1,31 @@
 # Layer-2-VPN
 
 # Overview
-This project implements a Layer 2 VPN using:
+This project simulates the behavior of a physical switch, by providing ethernet frame (L2) exchange service for devices (TAP) connected to the switch's port.
+
+It is implemented as follows:
 
 VSwitch: A software-based virtual switch with a MAC table and frame forwarding.
 
 VPort: A virtual port interfacing with a TAP device, forwarding frames to/from the VSwitch.
+
+# Prerequisite Knowledge
+Virtual Switch:
+
+A virtual network switch is a software-based switch that connects virtual machines (VMs) within a virtualized environment, enabling communication between VMs, virtual networks, and physical networks.
+
+Operating as a multiport network bridge, it uses virtual MAC addresses to forward data at the data link layer (Layer 2) of the OSI model.
+
+The switch maintains a forwarding table to map virtual MAC addresses to virtual ports. When a data frame is received, it forwards the frame to the correct port. If the destination is unknown, it broadcasts the frame to all ports except the source.
+
+Virtual Network Device (TAP Device):
+
+A TAP device is a virtual network interface that simulates a physical network card, allowing operating systems and applications to use it like a real interface. It is commonly used in Virtual Private Network (VPN) setups to enable secure data transmission over public networks.
+
+TAP devices are implemented in the operating system kernel and work as regular network interfaces. When packets are sent through the TAP device, they are passed to the TUN/TAP driver, which forwards them to an application for processing or sends them to other devices or networks. Similarly, incoming packets are processed by the application and delivered through the TAP device to their destination.
+
+In this project, the TAP device connects client computers to the virtual switch, enabling packet forwarding between clients and the switch.
+
 
 # How It Works
 VSwitch:
