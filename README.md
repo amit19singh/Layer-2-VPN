@@ -42,30 +42,30 @@ Note: Since, we are running everything locally on a single host, in the same net
 So to mimic an actual environment, we will create separate namespaces for each TAP device.
 
 
-##1) Create separate namespaces:
+## 1) Create separate namespaces:
 sudo ip netns add ns0
 sudo ip netns add ns1
 
-##2) Start the vswitch.py:
+## 2) Start the vswitch.py:
 python3 vswitch.py 8000
 
-##3) Create TAP devices:
+## 3) Create TAP devices:
 sudo ./vport 127.0.0.1 8000 tapyuan0
 sudo ./vport 127.0.0.1 8000 tapyuan1
 
-##4) Put each TAP interface in its own namespace:
+## 4) Put each TAP interface in its own namespace:
 sudo ip link set tapyuan0 netns ns0
 sudo ip link set tapyuan1 netns ns1
 
-##5) In namespace ns0, bring tapyuan0 up and give it an IP:
+## 5) In namespace ns0, bring tapyuan0 up and give it an IP:
 sudo ip netns exec ns0 ip link set dev tapyuan0 up
 sudo ip netns exec ns0 ip addr add 10.0.0.2/24 dev tapyuan0
 
-##6) Repeat step 5 for interface ns1 and give tapyuan1 an IP:
+## 6) Repeat step 5 for interface ns1 and give tapyuan1 an IP:
 sudo ip netns exec ns1 ip link set dev tapyuan1 up
 sudo ip netns exec ns1 ip addr add 10.0.0.3/24 dev tapyuan1
 
-##7) Test the connection using ping:
+## 7) Test the connection using ping:
 sudo ip netns exec ns0 ping -I tapyuan0 10.0.0.3
 
 sudo ip netns exec ns1 ping -I tapyuan1 10.0.0.2
