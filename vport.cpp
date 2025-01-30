@@ -106,7 +106,7 @@ void VPort::forwardToTAP() {
         int n = recvfrom(udp_socket, buffer.data(), buffer.size(), 0,
                          reinterpret_cast<struct sockaddr*>(&vswitch_addr), &addr_len);
         if (n > 0) {
-            // If it's at least an Ethernet frame, log the header
+            // log the header if it's an Ethernet frame
             if (n >= 14) {
                 const struct ether_header* hdr =
                     reinterpret_cast<const struct ether_header*>(buffer.data());
