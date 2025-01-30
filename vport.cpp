@@ -78,7 +78,7 @@ void VPort::forwardToVSwitch() {
                 const struct ether_header* hdr =
                     reinterpret_cast<const struct ether_header*>(buffer.data());
 
-                // Print logs similar to your C version
+                // Print logs
                 printf("[VPort] Sent to VSwitch: "
                        "dhost<%02x:%02x:%02x:%02x:%02x:%02x> "
                        "shost<%02x:%02x:%02x:%02x:%02x:%02x> "
